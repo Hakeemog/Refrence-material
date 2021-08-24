@@ -8,7 +8,7 @@
 # Now go to your browser to access your jenkins using#   ip_address_of_your_instance:8080    #you should open port 8080 in your EC2 SG
 docker ps     # This list the running image and its specs
  docker exec -it 0c3f8b0ee6b3 bash   # This move you inside the docker container
- cat /var/jenkins_home #to get your default jenkins password then insert the password to log-in to your jenkins server
+ cat /var/jenkins_home/secrets/initialAdminPassword  #to get your default jenkins password then insert the password to log-in to your jenkins server
  Change the default password
  
    #To install npm and Nodejs into container directly
