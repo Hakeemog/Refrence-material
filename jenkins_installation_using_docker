@@ -1,0 +1,15 @@
+ #After spinning your instance and downloading the security group, click gitbash here to ssh using gitbash, move to the path where your keypair is through bash
+# Change the permission on the KP to be able to use it. 
+ chmod +660 Keypainame.pem
+ apt-get update     # This update your terminal
+ apt install docker.io # This install docker
+ clear
+ docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts    # This mount docker volume for data persistency
+# Now go to your browser to access your jenkins using#   ip_address_of_your_instance:8080    #you should open port 8080 in your EC2 SG
+docker ps     # This list the running image and its specs
+ docker exec -it 0c3f8b0ee6b3 bash   # This move you inside the docker container
+ cat /var/jenkins_home #to get your default jenkins password then insert the password to log-in to your jenkins server
+ Change the default password
+ 
+   11  docker volume inspect jenkins_home
+   12  history
