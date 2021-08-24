@@ -11,5 +11,15 @@ docker ps     # This list the running image and its specs
  cat /var/jenkins_home #to get your default jenkins password then insert the password to log-in to your jenkins server
  Change the default password
  
-   11  docker volume inspect jenkins_home
-   12  history
+   #To install npm and Nodejs into container directly
+   Log into your jenkins docker container as a root user to do this tasks (run the following commands)
+   docker exec -it -u 0 containerid bash   # This move you inside the containeras a root user
+   apt update    # To update your container 
+   apt install curl   # This install curl needed for running nodejs script
+   curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh  # This set up the script
+   ls   # Display all the sub content of curl script
+   bash nodesource_setup.sh     # This setup node script
+   apt install nodejs    # This install nodejs and npm
+   nodejs -v     # This get nodejs version
+   npm -v   # This get npm version
+   
